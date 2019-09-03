@@ -40,12 +40,41 @@
 	<header id="masthead" class="site-header" role="banner">
 
         <div class="container">
-            <div class="row">
+            <div class="row align-items-center">
                 <div class="col-4">
-                    <hgroup>
-                        <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-                        <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-                    </hgroup>
+
+                    <?php
+                    $display_header_text = display_header_text();
+
+                    $logo_src = get_theme_mod('logo_src');
+                    //var_dump($logo_src);
+
+                    if(!empty($logo_src)):
+                        ?>
+                        <div class="main-logo">
+                            <a href="<?php echo esc_url(home_url()); ?>"><img src="<?php echo esc_url($logo_src);
+                                ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>"></a>
+                        </div><!-- /Logo -->
+                    <?php
+
+                    endif;
+
+                    ?>
+
+                    <?php
+
+                    if($display_header_text):
+                        ?>
+
+                        <hgroup>
+                            <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                            <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+                        </hgroup>
+                        <?php
+                    endif;
+
+                    ?>
+
                 </div>
                 <div class="col-8">
 

@@ -29,7 +29,7 @@ get_header(); ?>
                         while ( have_posts() ) :
                             the_post();
                             ?>
-                            <?php get_template_part( 'content', get_post_format() ); ?>
+                            <?php //get_template_part( 'content', get_post_format() ); ?>
                         <?php endwhile; ?>
 
                         <?php twentytwelve_content_nav( 'nav-below' ); ?>
@@ -73,7 +73,7 @@ get_header(); ?>
         </div>
 
         <div class="col-4">
-            <?php get_sidebar(); ?>
+            <?php //get_sidebar(); ?>
         </div>
 
     </div>

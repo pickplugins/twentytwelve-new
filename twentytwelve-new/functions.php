@@ -125,6 +125,7 @@ function twentytwelve_setup() {
 	// Indicate widget sidebars can use selective refresh in the Customizer.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
+    add_theme_support( 'woocommerce' );
 
 }
 add_action( 'after_setup_theme', 'twentytwelve_setup' );
@@ -133,6 +134,10 @@ add_action( 'after_setup_theme', 'twentytwelve_setup' );
  * Add support for a custom header image.
  */
 require( get_template_directory() . '/inc/custom-header.php' );
+require( get_template_directory() . '/inc/customizer/customizer-settings.php' );
+require( get_template_directory() . '/inc/customizer/color-customize.php' );
+require( get_template_directory() . '/inc/custom-hooks.php' );
+
 
 /**
  * Return the Google font stylesheet URL if available.
@@ -722,10 +727,51 @@ endif;
 
 
 
+add_theme_support( 'woocommerce' );
+add_theme_support( 'wc-product-gallery-zoom' );
+add_theme_support( 'wc-product-gallery-lightbox' );
+add_theme_support( 'wc-product-gallery-slider' );
+
+
+
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+
+
+
+add_action('woocommerce_before_main_content', 'bug_blog_woocommerce_before_main_content', 10);
+add_action('woocommerce_after_main_content', 'bug_blog_woocommerce_after_main_content', 10);
+
+function bug_blog_woocommerce_before_main_content() {
+
+    ?>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div id="primary" class="site-content">
+                    <div id="content" role="main">
 
 
 
 
+    <?php
+
+}
+
+function bug_blog_woocommerce_after_main_content() {
+
+    ?>
+    </div><!-- #content -->
+    </div><!-- #primary -->
+            </div> <!-- .col-md-8 -->
+            <div class="col-md-4">
+                <?php get_sidebar(); ?>
+            </div> <!-- .col-md-8 -->
+        </div><!-- .row -->
+    </div> <!-- .container -->
+    <?php
+
+}
 
 
 

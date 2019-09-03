@@ -13,7 +13,7 @@
 
 
 
-	<footer id="colophon" role="contentinfo">
+	<footer class="site-footer" id="colophon" role="contentinfo">
 
         <div class="container">
             <div class="row">
