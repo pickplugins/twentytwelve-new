@@ -41,7 +41,7 @@
 
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-4">
+                <div class="col-md-4">
 
                     <?php
                     $display_header_text = display_header_text();
@@ -76,7 +76,7 @@
                     ?>
 
                 </div>
-                <div class="col-8">
+                <div class="col-md-8">
 
                     <nav id="site-navigation" class="main-navigation" role="navigation">
                         <button class="menu-toggle"><?php _e( 'Menu', 'twentytwelve' ); ?></button>
@@ -102,3 +102,5 @@
 	</header><!-- #masthead -->
 
 	<div id="main" class="wrapper">
+
+        <?php //echo do_shortcode("[breadcrumb]"); ?>

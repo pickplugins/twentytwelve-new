@@ -27,9 +27,9 @@ function site_content_home_top_search_box(){
 
     <style type="text/css">
         .home-big-search-box{
-            background: url("https://image.freepik.com/free-vector/blue-technology-circuit-diagram-with-glowing-line-lights_1017-17266.jpg");
+            background: url("<?php echo get_template_directory_uri().'/assets/images/5771.jpg';?>");
             background-repeat: repeat;
-            /* background-size: 100%; */
+             background-size: 100%;
             background-position-y: center;
         }
 
@@ -53,8 +53,14 @@ function site_content_home_category_list(){
         <div class="container">
             <div class="row">
                 <div class="col-12 py-5">
+                    <h2 class="home-blogs-header text-center my-4">Popular Categories</h2>
+                    <p class="text-center">Here is some popular categories you can find job by your interest.</p>
 
-                    category_list
+                    <?php
+
+                    echo do_shortcode('[job_bm_category_job_count column=3]');
+
+                    ?>
 
                 </div>
             </div>
@@ -66,6 +72,9 @@ function site_content_home_category_list(){
     <style type="text/css">
 
 
+        .home-category-list{
+            background: #d8d8d840;
+        }
 
 
     </style>
@@ -81,21 +90,25 @@ function site_content_home_job_archive(){
     ?>
 
 
-    <section class="home-category-list p-5">
+    <section class="home-archive p-5">
 
         <div class="container">
             <div class="row">
                 <div class="col-8">
+                    <h2 class="home-job-archive">Job Archive</h2>
+                    <p>Here is some latest jobs.</p>
 
                     <?php
 
-                    echo do_shortcode('[job_bm_archive display_pagination="no"]');
+                    echo do_shortcode('[job_bm_archive display_search="no" display_pagination="no"]');
 
                     ?>
 
+                    <div class="m-5 text-center"><a href="">All Jobs</a> </div>
+
                 </div>
 
-                <div class="col-4">
+                <div class="col-md-4">
 
                     job_archive side
 
@@ -164,7 +177,7 @@ function site_content_home_blogs(){
                     <h2 class="home-blogs-header text-center my-4">Latest Blogs</h2>
                     <div class=" home-blogs-list row">
 
-                        <div class="home-blogs-list-item col-4">
+                        <div class="home-blogs-list-item col-md-4">
                             <div class="item-thumbnail"></div>
                             <h3 class="item-title"><a href="">Hello post title 1</a> </h3>
                             <p class="item-excerpt">As a developer at our headquarters in Dupont Circle, you’ll develop responsive themes for WordPress. You’ll use Sass, Bundler and Grunt (past experience with these preferred, but not necessarily required) to automate what you can, so you can focus on writing clean, performant code</p>
@@ -174,7 +187,7 @@ function site_content_home_blogs(){
                             </div>
                         </div>
 
-                        <div class="home-blogs-list-item col-4">
+                        <div class="home-blogs-list-item col-md-4">
                             <div class="item-thumbnail"></div>
                             <h3 class="item-title"><a href="">Hello post title 1</a> </h3>
                             <p class="item-excerpt">As a developer at our headquarters in Dupont Circle, you’ll develop responsive themes for WordPress. You’ll use Sass, Bundler and Grunt (past experience with these preferred, but not necessarily required) to automate what you can, so you can focus on writing clean, performant code</p>
@@ -184,7 +197,7 @@ function site_content_home_blogs(){
                             </div>
                         </div>
 
-                        <div class="home-blogs-list-item col-4">
+                        <div class="home-blogs-list-item col-md-4">
                             <div class="item-thumbnail"></div>
                             <h3 class="item-title"><a href="">Hello post title 1</a> </h3>
                             <p class="item-excerpt">As a developer at our headquarters in Dupont Circle, you’ll develop responsive themes for WordPress. You’ll use Sass, Bundler and Grunt (past experience with these preferred, but not necessarily required) to automate what you can, so you can focus on writing clean, performant code</p>
